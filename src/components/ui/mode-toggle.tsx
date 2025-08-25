@@ -64,7 +64,7 @@ export function ModeToggle({ id, email, image, isAdmin, username }: Payload) {
                 width={12}
                 className=" group-hover:text-emerald-700 group-hover:rotate-180 transition-all duration-500 ease-in-out"
               />
-              Add Article
+              Admin
             </Link>
           </DropdownMenuItem>
         )}

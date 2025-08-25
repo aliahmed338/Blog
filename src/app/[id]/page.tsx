@@ -35,7 +35,7 @@ const page = async ({ params }: SignleArticleProps) => {
           />
         )}
         <h1 className="text-lg font-[900] ">{article.title}</h1>
-        <div className="bg-gray-100 w-fit mb-2">
+        <div className="bg-gray-100 dark:bg-transparent w-fit mb-2">
           {new Date(article.createdAt).toDateString()}
         </div>
         <div
