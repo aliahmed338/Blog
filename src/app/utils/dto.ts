@@ -7,6 +7,7 @@ export interface registerDto {
   email: string;
   password: string;
   image: string;
+  isAdmin: boolean;
 }
 
 // articles

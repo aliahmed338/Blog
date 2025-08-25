@@ -40,6 +40,7 @@ export async function POST(request: NextRequest) {
         email: body.email,
         password: hashedPassword,
         image: body.image,
+        isAdmin: body.isAdmin,
       },
       select: {
         username: true,
