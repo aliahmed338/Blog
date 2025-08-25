@@ -1,6 +1,5 @@
 import ArticleItem from "@/components/articles/ArticleItem";
 import type { Metadata } from "next";
-import SearchArticlesInput from "@/components/articles/SearchArticlesInput";
 import Pagination from "@/components/articles/Pagination";
 import { getArticles, getArticlesCount } from "@/apicalls/articleApiCall";
 import { Article } from "@/generated/prisma";
