@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
       data: {
         text: body.text,
         articleId: body.articleId,
-        userId: user.id,
+        userId: user.id!,
       },
     });
     return NextResponse.json(newComment, { status: 201 });
