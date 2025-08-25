@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     const Body = (await request.json()) as LoginDto;
     // validation
     const validation = loginSchema.safeParse(Body);
-    if (!validation) {
+    if (!validation.success) {
       return NextResponse.json(validation.error.issues[0].message, {
         status: 400,
       });
