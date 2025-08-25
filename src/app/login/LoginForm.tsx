@@ -83,6 +83,7 @@ const LoginForm = ({ className, ...props }: React.ComponentProps<"div">) => {
                   <p className="error-message">Password is required</p>
                 )}
               </div>
+
               <Button disabled={loading} type="submit" className="w-full">
                 {loading ? "Loading..." : "Login"}
               </Button>

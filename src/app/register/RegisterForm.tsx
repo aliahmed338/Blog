@@ -15,6 +15,7 @@ import Image from "next/image";
 import Link from "next/link";
 import authImage from "../../../public/auth.jpg";
 import { cn } from "@/lib/utils";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const RegisterForm = ({ className, ...props }: React.ComponentProps<"div">) => {
   const router = useRouter();
@@ -22,6 +23,7 @@ const RegisterForm = ({ className, ...props }: React.ComponentProps<"div">) => {
     username: "",
     email: "",
     password: "",
+    isAdmin: false,
   });
   const [loading, setLoading] = useState(false);
   const [selectedAvatar, setSelectedAvatar] = useState<string>("");
@@ -43,6 +45,7 @@ const RegisterForm = ({ className, ...props }: React.ComponentProps<"div">) => {
         email: data.email,
         password: data.password,
         image: selectedAvatar,
+        isAdmin: data.isAdmin,
       });
       router.replace("/login");
       setLoading(false);
@@ -129,6 +132,21 @@ const RegisterForm = ({ className, ...props }: React.ComponentProps<"div">) => {
                     height={45}
                   />
                 ))}
+              </div>
+              <div className="grid gap-3">
+                <div className="flex items-center space-x-2">
+                  <Checkbox
+                    id="isAdmin"
+                    checked={data.isAdmin}
+                    onCheckedChange={(checked) =>
+                      setData({
+                        ...data,
+                        isAdmin: checked === "indeterminate" ? false : checked,
+                      })
+                    }
+                  />
+                  <Label htmlFor="isAdmin">Login as Admin</Label>
+                </div>
               </div>
               <Button disabled={loading} type="submit" className="w-full">
                 {loading ? "Loading..." : "Register"}
